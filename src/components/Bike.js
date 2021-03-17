@@ -2,12 +2,12 @@ import React from 'react';
 import './bike.css';
 
 const Bike = ({ manufacturer,model,fullSus,wheelSize,forkTravel,shockTravel,htAngle,link,picLink }) => {
-    let hA = '';
+    let hA = [];
     if (htAngle.length > 1) {
         hA = htAngle.map( value => {
-            return hA = value + '°, ';
+            return ' ' + value + '°';
         })
-    } else hA = htAngle;
+    } else hA = htAngle + '°';
 
     const sT = shockTravel === 0 ? 'none' : shockTravel + 'mm';
 
@@ -32,7 +32,7 @@ const Bike = ({ manufacturer,model,fullSus,wheelSize,forkTravel,shockTravel,htAn
                 <p>Wheel Size: {wheelSize}"</p>
                 <p>Fork Travel: {forkTravel}mm </p>
                 <p>Shock Travel: {sT} </p>
-                <p>HT Angle: {hA}</p>
+                <p>HT Angle: {hA.toString()}</p>
             </div>
         </div>
     )
