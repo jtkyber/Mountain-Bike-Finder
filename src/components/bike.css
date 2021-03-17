@@ -18,7 +18,7 @@
     border-radius: 30px;
     transition: 0.3s;
     flex-grow: 3;
-    opacity: 70%;
+    opacity: 0.7;
 }
 
 .bikeBlock:hover {
@@ -44,7 +44,7 @@ p {
     align-items: center;
     flex-direction: column;
     color: #D8D8D8;
-    opacity: 90%;
+    opacity: 0.9;
 }
 
 .info h3 {

@@ -29,7 +29,7 @@ body {
 #title {
     color: #D8D8D8;
     margin: 0;
-    opacity: 85%;
+    opacity: 0.85;
 }
 
 #aboveDrops {
@@ -75,7 +75,7 @@ body {
     overflow: scroll;
     overflow-x: hidden;
     grid-area: Search;
-    opacity: 90%;
+    opacity: 0.9;
     background: rgba(0,0,0,0.5);
     margin-top: 1.8rem;
     border-radius: 20px;
