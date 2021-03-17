@@ -10,7 +10,7 @@ ReactDOM.render(
   <Router basename={process.env.PUBLIC_URL}>
     <App />
   </Router>,
-  document.getElementById('ronpm ot')
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
