@@ -1,0 +1,147 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    display: grid;
+    background: url('../pics/mtb2.jpg');
+    background-size: cover;
+    grid-template-columns: 21rem 1fr;
+    grid-template-rows: 4rem 1fr;
+    grid-template-areas:
+    "Header Header"
+    "Search Results";
+    gap: 0;
+}
+
+#header {
+    text-transform: capitalize;
+    z-index: 3;
+    grid-area: Header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 6px solid rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.3);
+}
+
+#title {
+    color: #D8D8D8;
+    margin: 0;
+    opacity: 85%;
+}
+
+#aboveDrops {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+#resultsText {
+    padding-right: 0.5rem;
+    padding-top: 1.2rem;
+    margin: 0;
+    color: #D8D8D8;
+    font-weight: 400;
+}
+
+#btn {
+    border: 2px solid rgba(216,216,216,0.7);
+    border-radius: 8px;
+    background-color: #A19885;
+    color: #000000;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+#btn:hover {
+    background-color: #000000;
+    color: #A19885;
+}
+
+#searchArea {
+    display: flex;
+    flex-direction: column;
+    height: 88.1vh;
+    min-width: 20rem;
+    max-width: 20rem;
+    padding-top: 0.5rem;
+    align-items: center;
+    z-index: 2;
+    overflow: scroll;
+    overflow-x: hidden;
+    grid-area: Search;
+    opacity: 90%;
+    background: rgba(0,0,0,0.5);
+    margin-top: 1.8rem;
+    border-radius: 20px;
+    border: 2px solid rgba(216,216,216,0.7);
+    border-left: none;
+    /*border-bottom: none;*/
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#searchArea::-webkit-scrollbar {
+    display: none;
+}
+
+#searchArea select {
+    text-transform: capitalize;
+}
+
+.drop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.4rem 1rem 2rem 1rem;
+    background: #D8D8D8;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    /*box-shadow: 5px 5px 8px black;*/
+}
+
+select {
+    padding: 0.3rem;
+    width: 10rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #A19885;
+    color: white;
+}
+
+select:hover:not(:focus) {
+    background-color: white;
+    color: #A19885;
+}
+
+/*select:focus {
+    background-color: #A19885;
+}
+*/
+label {
+    padding-right: 0.5rem;
+    margin: auto;
+    color: #000000;
+    font-weight: 500;
+}
+
+#results {
+    padding-top: 0.8rem;
+    height: 100vh;
+    z-index: 1;
+    overflow: scroll;
+    grid-area: Results;
+    padding-bottom: 4rem;
+}
+
+#results::-webkit-scrollbar {
+    display: none;
+}
+
+

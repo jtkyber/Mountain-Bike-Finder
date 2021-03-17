@@ -1,0 +1,59 @@
+.blocks {
+    display: inline-block;
+    background: rgba(0,0,0,0.85);
+    margin: 1rem 1rem;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid rgba(216,216,216,0.7);
+    /*box-shadow: 7px 7px 5px rgba(40,40,40,0.7);*/
+}
+
+.bikeBlock {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    width: 20rem;
+    margin: 15px;
+    border-radius: 30px;
+    transition: 0.3s;
+    flex-grow: 3;
+    opacity: 70%;
+}
+
+.bikeBlock:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    text-transform: capitalize;
+    color: rgb(255,255,255);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    text-transform: capitalize;
+    font-size: 120%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #D8D8D8;
+    opacity: 90%;
+}
+
+.info h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.info p {
+    margin: 0;
+    font-size: 17px;
+}
