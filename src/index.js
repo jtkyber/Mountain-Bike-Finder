@@ -7,10 +7,10 @@ import 'tachyons';
 import { HashRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <App />
   </Router>,
-  document.getElementById('root')
+  document.getElementById('ronpm ot')
 );
 
 // If you want to start measuring performance in your app, pass a function
