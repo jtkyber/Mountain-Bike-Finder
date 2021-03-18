@@ -2,6 +2,15 @@ import React from 'react';
 import Bike from './Bike';
 
 const BikeList = ({ bikes }) => {
+    if (bikes.length === 0)
+    {
+        return (
+        <div id='empty'>
+            <h3>no bikes match the current selections</h3>
+            <img src="https://media.giphy.com/media/d8lUKXD00IXSw/giphy.gif" />
+        </div>
+        )
+    }
     return (
         <div>
          {
