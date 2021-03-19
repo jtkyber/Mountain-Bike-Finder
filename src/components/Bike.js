@@ -2,18 +2,17 @@ import React from 'react';
 import './bike.css';
 
 const Bike = ({ manufacturer,model,fullSus,wheelSize,forkTravel,shockTravel,htAngle,link,picLink }) => {
-    let hA = [];
-    if (htAngle.length > 1) {
-        hA = htAngle.map( value => {
-            return ' ' + value + '°';
-        })
-    } else hA = htAngle + '°';
+
+    const inches = parseInt(wheelSize) ? '"' : '';
 
     const sT = shockTravel === 0 ? 'none' : shockTravel + 'mm';
+
+    const hA = htAngle.length > 1 ? htAngle.map(value => ' ' + value + '°') : htAngle + '°';
 
     const open = () => {
         window.open(`${link}`, '_blank');
     }
+
 
     return (
         <div className='blocks'>
@@ -29,7 +28,7 @@ const Bike = ({ manufacturer,model,fullSus,wheelSize,forkTravel,shockTravel,htAn
 
             <div className='info'>
                 <h3>{manufacturer} {model} </h3>
-                <p>Wheel Size: {wheelSize}"</p>
+                <p>Wheel Size: {wheelSize}{inches}</p>
                 <p>Fork Travel: {forkTravel}mm </p>
                 <p>Shock Travel: {sT} </p>
                 <p>HT Angle: {hA.toString()}</p>

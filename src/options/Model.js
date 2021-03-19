@@ -14,6 +14,8 @@ const Model = ({ models }) => {
                         );
                     })
                 }
+            })
+        }
         </Fragment>
     );
 }

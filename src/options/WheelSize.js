@@ -1,14 +1,22 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Options from '../components/Options';
 
-const WheelSize = ({ bikes }) => {
+const WheelSize = ({ bikes, curMod }) => {
+    const acc = [];
+    const arr = [];
+    bikes.forEach(bike => {
+        if ((curMod !== '' || curMod === '') && bike.model.includes(curMod) && !acc.includes(bike.wheelSize)) {
+            arr.push(bike.wheelSize);
+            acc.push(bike.wheelSize);
+        }
+    })
+
     return (
-        <Fragment>
-            <Options option='27.5' units='"' />
-            <Options option='29' units='"' />
-            <Options option='Mullet' />
-        </Fragment>
-    );
+        arr.sort().map(wS => {
+            let units = parseInt(wS) ? '"' : '';
+            return <Options option={wS} units={units} />
+        })
+    )
 }
 
 

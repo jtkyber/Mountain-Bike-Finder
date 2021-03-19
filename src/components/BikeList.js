@@ -7,7 +7,7 @@ const BikeList = ({ bikes }) => {
         return (
         <div id='empty'>
             <h3>no bikes match the current selections</h3>
-            <img src="https://media.giphy.com/media/d8lUKXD00IXSw/giphy.gif" />
+            <img alt="tumbleweed" src="https://media.giphy.com/media/d8lUKXD00IXSw/giphy.gif" />
         </div>
         )
     }

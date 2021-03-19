@@ -1,13 +1,20 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Options from '../components/Options';
 
-const BikeType = ({ bikes }) => {
+const BikeType = ({ bikes, curMod }) => {
+    const arr = [];
+
+    bikes.forEach(bike => {
+        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.bikeType)) {
+            arr.push(bike.bikeType);
+        }
+    })
+
     return (
-        <Fragment>
-            <Options option='Full Suspension'/>
-            <Options option='Hardtail'/>
-        </Fragment>
-    );
+        arr.map(bT => {
+            return <Options option={bT} />
+        })
+    )
 }
 
 

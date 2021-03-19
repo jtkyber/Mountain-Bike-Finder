@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import BikeList from '../components/BikeList';
 import { bikes } from '../bikes';
 import AllDropdowns from '../components/AllDropdowns';
-import Model from '../options/Model';
 import './App.css';
 
 class App extends Component {
@@ -27,14 +26,17 @@ class App extends Component {
     }
 
     filter = () => {
-        const { bks,manuf,mod,bT,wS,fT,rT,hA } = this.state;
+        const { manuf,mod,bT,wS,fT,rT,hA } = this.state;
         const haMin = hA.substring(0,2);
-        const haMax = hA.substring(3,5);
+        const haMax = hA.substring(3,7);
 
         const haIsBetween = (angles) => {
             let isBetween = false;
             for (let angle of angles) {
-                if (angle >= haMin && angle <= haMax){isBetween = true;}
+                if (angle >= haMin && angle <= haMax){
+                    isBetween = true;
+                    break;
+                }
                 else {isBetween = false;}
             }
             return isBetween;
@@ -48,21 +50,56 @@ class App extends Component {
                 && bike.forkTravel.toString().includes(fT)
                 && bike.shockTravel.toString().includes(rT)
                 && haIsBetween(bike.htAngle);
-            })
+            }),
+            willFilter: false
          })
     }
+
+
 
     onSearchChange = (event) => {
         const id = event.target.id;
         const value = event.target.value;
         if (id === 'Manufacturer') {
             if (value === 'All') {
-                this.setState({ manuf: '', mod: ''})
-            } else { this.setState({ manuf: value }) }
+                this.setState({
+                    manuf: '',
+                    mod: '',
+                    bT: '',
+                    wS: '',
+                    fT: '',
+                    rT: '',
+                    hA: '10-99'
+                })
+            } else { this.setState({
+                manuf: value,
+                mod: '',
+                bT: '',
+                wS: '',
+                fT: '',
+                rT: '',
+                hA: '10-99'
+            })
+        }
         } else if (id === 'Model') {
             if (value === 'All') {
-                this.setState({ mod: ''})
-            } else { this.setState({ mod: value }) }
+                this.setState({
+                    mod: '',
+                    bT: '',
+                    wS: '',
+                    fT: '',
+                    rT: '',
+                    hA: '10-99'
+                })
+            } else { this.setState({
+                mod: value,
+                bT: '',
+                wS: '',
+                fT: '',
+                rT: '',
+                hA: '10-99'
+            })
+        }
         } else if (id === 'BikeType') {
             if (value === 'All') {
                 this.setState({ bT: ''})
@@ -88,31 +125,10 @@ class App extends Component {
     }
 
     render() {
-        const { bks,manuf,mod,bT,wS,fT,rT,hA,willFilter } = this.state;
-        // const haMin = hA.substring(0,2);
-        // const haMax = hA.substring(3,5);
+        const { bks,manuf,mod,willFilter } = this.state;
 
-        // const haIsBetween = (angles) => {
-        //     let isBetween = false;
-        //     for (let angle of angles) {
-        //         if (angle >= haMin && angle <= haMax){isBetween = true;}
-        //         else {isBetween = false;}
-        //     }
-        //     return isBetween;
-        // }
-
-        // const filterBikes = bks.filter(bike => {
-        //     return bike.manufacturer.toLowerCase().includes(manuf.toLowerCase())
-        //     && bike.model.toLowerCase().includes(mod.toLowerCase())
-        //     && bike.bikeType.toLowerCase().includes(bT.toLowerCase())
-        //     && bike.wheelSize.toString().includes(wS)
-        //     && bike.forkTravel.toString().includes(fT)
-        //     && bike.shockTravel.toString().includes(rT)
-        //     && haIsBetween(bike.htAngle);
-        // })
         if (willFilter) {
             this.filter();
-            this.setState({ willFilter: false })
         }
 
         const s = () => {
@@ -134,8 +150,7 @@ class App extends Component {
                             <h4 id='resultsText'>{bks.length} Result{s()}</h4>
                             <button id='btn' value='reset'>Reset</button>
                         </div>
-                        <AllDropdowns id='drops' bikes={bikes} models={models} search={this.onSearchChange} />
-                        {console.log()}
+                        <AllDropdowns id='drops' bikes={bikes} models={models} curMod={mod} search={this.onSearchChange} />
                     </form>
                 </div>
                 <div id='results'>
