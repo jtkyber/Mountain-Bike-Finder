@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Mountain-Bike-Finder/static/css/main.5a1ae4ed.chunk.css",
-    "main.js": "/Mountain-Bike-Finder/static/js/main.c168fda4.chunk.js",
-    "main.js.map": "/Mountain-Bike-Finder/static/js/main.c168fda4.chunk.js.map",
+    "main.js": "/Mountain-Bike-Finder/static/js/main.4c177590.chunk.js",
+    "main.js.map": "/Mountain-Bike-Finder/static/js/main.4c177590.chunk.js.map",
     "runtime-main.js": "/Mountain-Bike-Finder/static/js/runtime-main.4b308eab.js",
     "runtime-main.js.map": "/Mountain-Bike-Finder/static/js/runtime-main.4b308eab.js.map",
     "static/css/2.fe359a49.chunk.css": "/Mountain-Bike-Finder/static/css/2.fe359a49.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.fe359a49.chunk.css",
     "static/js/2.94f44178.chunk.js",
     "static/css/main.5a1ae4ed.chunk.css",
-    "static/js/main.c168fda4.chunk.js"
+    "static/js/main.4c177590.chunk.js"
   ]
 }
