@@ -5,8 +5,8 @@ const RearTravel = ({ bikes, curMod }) => {
     const arr = [];
 
     bikes.forEach(bike => {
-        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.forkTravel)) {
-            arr.push(bike.forkTravel);
+        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.rearTravel)) {
+            arr.push(bike.rearTravel);
         }
     })
 
