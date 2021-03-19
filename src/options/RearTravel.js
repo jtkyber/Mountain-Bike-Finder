@@ -1,12 +1,12 @@
 import React from 'react';
 import Options from '../components/Options';
 
-const RearTravel = ({ bikes, curMod }) => {
+const ShockTravel = ({ bikes, curMod }) => {
     const arr = [];
 
     bikes.forEach(bike => {
-        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.rearTravel)) {
-            arr.push(bike.rearTravel);
+        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.shockTravel)) {
+            arr.push(bike.shockTravel);
         }
     })
 
@@ -18,4 +18,4 @@ const RearTravel = ({ bikes, curMod }) => {
 }
 
 
-export default RearTravel;
+export default ShockTravel;

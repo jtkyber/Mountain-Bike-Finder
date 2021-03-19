@@ -4,7 +4,7 @@ import Model from '../options/Model';
 import BikeType from '../options/BikeType';
 import WheelSize from '../options/WheelSize';
 import ForkTravel from '../options/ForkTravel';
-import RearTravel from '../options/RearTravel';
+import ShockTravel from '../options/ShockTravel';
 import HTAngle from '../options/HTAngle';
 
 const AllDropdowns = ({ bikes, models, curMod, search }) => {
@@ -51,10 +51,10 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
             </div>
 
             <div className='drop' id='option5'>
-                <label for="RearTravel">Rear Travel </label>
-                <select id='RearTravel' name='RearTravel' onChange={search}>
+                <label for="ShockTravel">Shock Travel </label>
+                <select id='ShockTravel' name='ShockTravel' onChange={search}>
                     <option value='All'>All</option>
-                    <RearTravel bikes={bikes} curMod={curMod}/>
+                    <ShockTravel bikes={bikes} curMod={curMod}/>
                 </select>
             </div>
 
