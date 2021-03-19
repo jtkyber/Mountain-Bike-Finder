@@ -112,7 +112,7 @@ class App extends Component {
             if (value === 'All') {
                 this.setState({ fT: ''})
             } else { this.setState({ fT: value }) }
-        } else if (id === 'RearTravel') {
+        } else if (id === 'ShockTravel') {
             if (value === 'All') {
                 this.setState({ rT: ''})
             } else { this.setState({ rT: value }) }
