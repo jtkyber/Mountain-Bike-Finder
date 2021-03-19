@@ -145,11 +145,11 @@ class App extends Component {
                     <h1 id='title'>Mountain Bike Finder</h1>
                 </div>
                 <div id='searchArea'>
-                    <form>
-                        <div id='aboveDrops'>
+                    <div id='aboveDrops'>
                             <h4 id='resultsText'>{bks.length} Result{s()}</h4>
                             <button id='btn' value='reset'>Reset</button>
-                        </div>
+                    </div>
+                    <form>
                         <AllDropdowns id='drops' bikes={bikes} models={models} curMod={mod} search={this.onSearchChange} />
                     </form>
                 </div>
