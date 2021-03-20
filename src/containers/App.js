@@ -54,12 +54,10 @@ class App extends Component {
             return parseInt(x);
         }
 
-        // console.log(stInt);
-
          this.setState({
             bks: bikes.filter(bike => {
                 return bike.manufacturer.toLowerCase().includes(manuf.toLowerCase())
-                && bike.model.toLowerCase().includes(mod.toLowerCase())
+                && (bike.model.toLowerCase() === mod.toLowerCase() || mod === '')
                 && bike.bikeType.toLowerCase().includes(bT.toLowerCase())
                 && bike.wheelSize.toString().includes(wS)
                 && bike.forkTravel.toString().includes(fT)
