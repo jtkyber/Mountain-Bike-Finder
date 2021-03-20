@@ -5,8 +5,8 @@ import AllDropdowns from '../components/AllDropdowns';
 import './App.css';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             bks: [],
             manuf: '',
@@ -18,6 +18,7 @@ class App extends Component {
             hA: '10-99',
             willFilter: false
         }
+        this.myRef = React.createRef();
     }
 
     componentDidMount() {
@@ -55,8 +56,6 @@ class App extends Component {
          })
     }
 
-
-
     onSearchChange = (event) => {
         const id = event.target.id;
         const value = event.target.value;
@@ -71,15 +70,16 @@ class App extends Component {
                     rT: '',
                     hA: '10-99'
                 })
-            } else { this.setState({
-                manuf: value,
-                mod: '',
-                bT: '',
-                wS: '',
-                fT: '',
-                rT: '',
-                hA: '10-99'
-            })
+            } else {
+                this.setState({
+                    manuf: value,
+                    mod: '',
+                    bT: '',
+                    wS: '',
+                    fT: '',
+                    rT: '',
+                    hA: '10-99'
+                })
         }
         } else if (id === 'Model') {
             if (value === 'All') {
@@ -124,6 +124,20 @@ class App extends Component {
         this.setState({ willFilter: true })
     }
 
+    resetForm = () => {
+        this.myRef.current.reset();
+        this.setState({
+            manuf: '',
+            mod: '',
+            bT: '',
+            wS: '',
+            fT: '',
+            rT: '',
+            hA: '10-99',
+            willFilter: true
+        })
+    }
+
     render() {
         const { bks,manuf,mod,willFilter } = this.state;
 
@@ -147,9 +161,9 @@ class App extends Component {
                 <div id='searchArea'>
                     <div id='aboveDrops'>
                             <h4 id='resultsText'>{bks.length} Result{s()}</h4>
-                            <button id='btn' value='reset'>Reset</button>
+                            <button onClick={this.resetForm} id='btn' value='reset'>Reset</button>
                     </div>
-                    <form>
+                    <form ref = {this.myRef}>
                         <AllDropdowns id='drops' bikes={bikes} models={models} curMod={mod} search={this.onSearchChange} />
                     </form>
                 </div>
