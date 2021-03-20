@@ -74,7 +74,7 @@ export const bikes = [
         shockTravel: 0,
         htAngle: [68.5],
         link: 'https://www.specialized.com/us/en/shop/bikes/mountain-bikes/trail-bikes/rockhopper/c/rockhopper',
-        picLink: 'https://bikerumor.com/wp-content/uploads/2020/05/2021-Specialized-Rockhopper-mountain-bike_affordable-aluminum-alloy-MTB-hardtail_Rockhopper-Expert-tease.jpg'
+        picLink: 'https://images.immediate.co.uk/production/volatile/sites/21/2020/05/specialized-rockhopper-pack-shot-2-c7f23e2.jpeg?webp=true&quality=90&resize=620%2C413'
     },
     {
         manufacturer: 'trek',

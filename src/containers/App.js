@@ -42,6 +42,20 @@ class App extends Component {
             }
             return isBetween;
         }
+
+        const stInt = (shockTravel) => {
+            let x = '';
+            for (let i=0; i<rT.length; i++) {
+                if (!isNaN(rT[i])) {
+                    x = x + rT[i];
+                }
+            }
+            console.log(x);
+            return parseInt(x);
+        }
+
+        // console.log(stInt);
+
          this.setState({
             bks: bikes.filter(bike => {
                 return bike.manufacturer.toLowerCase().includes(manuf.toLowerCase())
@@ -49,18 +63,33 @@ class App extends Component {
                 && bike.bikeType.toLowerCase().includes(bT.toLowerCase())
                 && bike.wheelSize.toString().includes(wS)
                 && bike.forkTravel.toString().includes(fT)
-                && bike.shockTravel.toString().includes(rT)
+                && (bike.shockTravel === stInt() || rT === '')
                 && haIsBetween(bike.htAngle);
             }),
             willFilter: false
          })
     }
 
+    resetForm = () => {
+        this.myRef.current.reset();
+        this.setState({
+            manuf: '',
+            mod: '',
+            bT: '',
+            wS: '',
+            fT: '',
+            rT: '',
+            hA: '10-99',
+            willFilter: true
+        })
+    }
+
     onSearchChange = (event) => {
         const id = event.target.id;
-        const value = event.target.value;
+        let value = event.target.value;
+        const defaultVal = event.target.children[0].value;
         if (id === 'Manufacturer') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({
                     manuf: '',
                     mod: '',
@@ -82,7 +111,7 @@ class App extends Component {
                 })
         }
         } else if (id === 'Model') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({
                     mod: '',
                     bT: '',
@@ -101,41 +130,27 @@ class App extends Component {
             })
         }
         } else if (id === 'BikeType') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({ bT: ''})
             } else { this.setState({ bT: value }) }
         } else if (id === 'WheelSize') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({ wS: ''})
             } else { this.setState({ wS: value }) }
         } else if (id === 'ForkTravel') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({ fT: ''})
             } else { this.setState({ fT: value }) }
         } else if (id === 'ShockTravel') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({ rT: ''})
             } else { this.setState({ rT: value }) }
         } else if (id === 'HTAngle') {
-            if (value === 'All') {
+            if (value === defaultVal) {
                 this.setState({ hA: '10-99'})
             } else { this.setState({ hA: value }) }
         }
         this.setState({ willFilter: true })
-    }
-
-    resetForm = () => {
-        this.myRef.current.reset();
-        this.setState({
-            manuf: '',
-            mod: '',
-            bT: '',
-            wS: '',
-            fT: '',
-            rT: '',
-            hA: '10-99',
-            willFilter: true
-        })
     }
 
     render() {
@@ -145,9 +160,7 @@ class App extends Component {
             this.filter();
         }
 
-        const s = () => {
-            return bks.length === 1 ? '' : 's';
-        }
+        const s = bks.length === 1 ? '' : 's';
 
         const models = bikes.filter(bike => {
             return bike.manufacturer.toLowerCase().includes(manuf.toLowerCase())
@@ -160,7 +173,7 @@ class App extends Component {
                 </div>
                 <div id='searchArea'>
                     <div id='aboveDrops'>
-                            <h4 id='resultsText'>{bks.length} Result{s()}</h4>
+                            <h4 id='resultsText'>{bks.length} Result{s}</h4>
                             <button onClick={this.resetForm} id='btn' value='reset'>Reset</button>
                     </div>
                     <form ref = {this.myRef}>

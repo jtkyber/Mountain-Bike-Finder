@@ -5,7 +5,7 @@ const Bike = ({ manufacturer,model,fullSus,wheelSize,forkTravel,shockTravel,htAn
 
     const inches = parseInt(wheelSize) ? '"' : '';
 
-    const sT = shockTravel === 0 ? 'none' : shockTravel + 'mm';
+    const sT = shockTravel === 0 ? 'Hardtail' : shockTravel + 'mm';
 
     const hA = htAngle.length > 1 ? htAngle.map(value => ' ' + value + '°') : htAngle + '°';
 
