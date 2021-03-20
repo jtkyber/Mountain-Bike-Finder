@@ -119,6 +119,18 @@ body {
     #results::-webkit-scrollbar {
         display: none;
     }
+
+    #empty {
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 35rem;
+        margin-top: 1rem;
+        opacity: 0.9;
+        width: 26rem;
+        transform: scale(0.65);
+    }
 }
 
 @media only screen and (min-width: 401px) and (max-width: 699px) {
@@ -237,6 +249,17 @@ body {
     #results::-webkit-scrollbar {
         display: none;
     }
+
+    #empty {
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 26rem;
+        margin-top: 1rem;
+        opacity: 0.9;
+        transform: scale(0.7);
+    }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1080px) {
@@ -354,6 +377,16 @@ body {
 
     #results::-webkit-scrollbar {
         display: none;
+    }
+
+    #empty {
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 35rem;
+        margin-top: 1rem;
+        opacity: 0.9;
     }
 }
 
@@ -489,6 +522,16 @@ body {
         background: rgba(161,152,133,0.8);
         border: 1px solid rgba(216,216,216,0.8);
     }
+
+    #empty {
+        display: inline-flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 35rem;
+        margin-top: 1rem;
+        opacity: 0.9;
+    }
 }
 
 #title {
@@ -517,16 +560,6 @@ body {
 
 #searchArea select {
     text-transform: capitalize;
-}
-
-#empty {
-    display: inline-flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 20px;
-    width: 35rem;
-    margin-top: 1rem;
-    opacity: 0.9;
 }
 
 #empty img {
