@@ -50,7 +50,6 @@ class App extends Component {
                     x = x + rT[i];
                 }
             }
-            console.log(x);
             return parseInt(x);
         }
 
