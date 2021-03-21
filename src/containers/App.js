@@ -16,14 +16,13 @@ class App extends Component {
             fT: '',
             rT: '',
             hA: '10-99',
-            willFilter: false
+            willFilter: false,
         }
         this.myRef = React.createRef();
     }
 
     componentDidMount() {
         this.setState({ bks: bikes });
-
     }
 
     filter = () => {
@@ -65,6 +64,7 @@ class App extends Component {
             }),
             willFilter: false
          })
+
     }
 
     resetForm = () => {
@@ -129,7 +129,9 @@ class App extends Component {
         } else if (id === 'BikeType') {
             if (value === defaultVal) {
                 this.setState({ bT: ''})
-            } else { this.setState({ bT: value }) }
+            } else {
+                this.setState({ bT: value })
+            }
         } else if (id === 'WheelSize') {
             if (value === defaultVal) {
                 this.setState({ wS: ''})
@@ -158,7 +160,6 @@ class App extends Component {
         }
 
         const s = bks.length === 1 ? '' : 's';
-
         const models = bikes.filter(bike => {
             return bike.manufacturer.toLowerCase().includes(manuf.toLowerCase())
         })
@@ -174,7 +175,7 @@ class App extends Component {
                             <button onClick={this.resetForm} id='btn' value='reset'>Reset</button>
                     </div>
                     <form ref = {this.myRef}>
-                        <AllDropdowns id='drops' bikes={bikes} models={models} curMod={mod} search={this.onSearchChange} />
+                        <AllDropdowns id='drops' bikes={bikes} bks={bks} models={models} curMod={mod} search={this.onSearchChange} />
                     </form>
                 </div>
                 <div id='results'>

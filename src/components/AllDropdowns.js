@@ -7,7 +7,7 @@ import ForkTravel from '../options/ForkTravel';
 import ShockTravel from '../options/ShockTravel';
 import HTAngle from '../options/HTAngle';
 
-const AllDropdowns = ({ bikes, models, curMod, search }) => {
+const AllDropdowns = ({ bikes, bks, models, curMod, search }) => {
     return (
         <Fragment>
             <div className='drop' id='option1'>
@@ -30,7 +30,7 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
                 <label for="BikeType">Bike Type </label>
                 <select id='BikeType' name='BikeType' onChange={search}>
                     <option value='All'>All</option>
-                    <BikeType bikes={bikes} curMod={curMod}/>
+                    <BikeType bikes={models} bks={bks} curMod={curMod}/>
                 </select>
             </div>
 
@@ -38,7 +38,7 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
                 <label for="WheelSize">Wheel Size </label>
                 <select id='WheelSize' name='WheelSize' onChange={search}>
                     <option value='All'>All</option>
-                    <WheelSize bikes={bikes} curMod={curMod}/>
+                    <WheelSize bikes={models} bks={bks} curMod={curMod}/>
                 </select>
             </div>
 
@@ -46,7 +46,7 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
                 <label for="ForkTravel">Fork Travel </label>
                 <select id='ForkTravel' name='ForkTravel' onChange={search}>
                     <option value='All'>All</option>
-                    <ForkTravel bikes={bikes} curMod={curMod}/>
+                    <ForkTravel bikes={models} bks={bks} curMod={curMod}/>
                 </select>
             </div>
 
@@ -54,7 +54,7 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
                 <label for="ShockTravel">Shock Travel </label>
                 <select id='ShockTravel' name='ShockTravel' onChange={search}>
                     <option value='All'>All</option>
-                    <ShockTravel bikes={bikes} curMod={curMod}/>
+                    <ShockTravel bikes={models} bks={bks} curMod={curMod}/>
                 </select>
             </div>
 
@@ -62,7 +62,7 @@ const AllDropdowns = ({ bikes, models, curMod, search }) => {
                 <label for="HTAngle">HT Angle </label>
                 <select id='HTAngle' name='HTAngle' onChange={search}>
                     <option value='All'>All</option>
-                    <HTAngle bikes={bikes} curMod={curMod}/>
+                    <HTAngle bikes={models} bks={bks} curMod={curMod}/>
                 </select>
             </div>
         </Fragment>

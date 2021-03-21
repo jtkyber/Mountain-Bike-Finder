@@ -2,12 +2,10 @@ import React from 'react';
 import Options from '../components/Options';
 
 const WheelSize = ({ bikes, curMod }) => {
-    const acc = [];
     const arr = [];
     bikes.forEach(bike => {
-        if ((curMod !== '' || curMod === '') && bike.model.includes(curMod) && !acc.includes(bike.wheelSize)) {
+        if ((curMod === '' || bike.model === curMod) && !arr.includes(bike.wheelSize)) {
             arr.push(bike.wheelSize);
-            acc.push(bike.wheelSize);
         }
     })
 

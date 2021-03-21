@@ -1,11 +1,11 @@
 import React from 'react';
 import Options from '../components/Options';
 
-const ForkTravel = ({ bikes, curMod }) => {
+const ForkTravel = ({ bikes, bks, curMod }) => {
     const arr = [];
-
+    let classname = '';
     bikes.forEach(bike => {
-        if ((bike.model.includes(curMod) || curMod === '') && !arr.includes(bike.forkTravel)) {
+        if ((bike.model === curMod || curMod === '') && !arr.includes(bike.forkTravel)) {
             arr.push(bike.forkTravel);
         }
     })
@@ -30,7 +30,16 @@ const ForkTravel = ({ bikes, curMod }) => {
 
     return (
         sortArr(arr).map(fT => {
-            return <Options option={fT} units='mm' />
+            for (let i = 0; i < bks.length; i ++) {
+                if (fT === bks[i].forkTravel) {
+                    classname = '';
+                    break;
+                }
+                else {
+                    classname = 'crossOut';
+                }
+            }
+            return <Options classname={classname} option={fT} units='mm' />
         })
     )
 }
