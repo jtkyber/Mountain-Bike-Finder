@@ -4,6 +4,8 @@ import Options from '../components/Options';
 const WheelSize = ({ bikes, bks, curMod }) => {
     const arr = [];
     let classname = '';
+    let noMatch = '';
+    let units = '"';
     bikes.forEach(bike => {
         if ((curMod === '' || bike.model === curMod) && !arr.includes(bike.wheelSize)) {
             arr.push(bike.wheelSize);
@@ -15,15 +17,17 @@ const WheelSize = ({ bikes, bks, curMod }) => {
             for (let i = 0; i < bks.length; i ++) {
                 if (wS === bks[i].wheelSize) {
                     classname = '';
+                    noMatch = '';
                     break;
                 }
                 else {
                     classname = 'crossOut';
+                    noMatch = '(No Match)';
                 }
             }
 
-            let units = parseInt(wS) ? '"' : '';
-            return <Options classname={classname} option={wS} units={units} />
+            units = parseInt(wS) ? '"' : '';
+            return <Options classname={classname} value={wS} option={wS + units + noMatch} units={units} />
         })
     )
 }

@@ -13,6 +13,7 @@ const Manufacturer = ({ bikes }) => {
                                 <Options
                                 key={bike.model}
                                 option={bike.manufacturer}
+                                value={bike.manufacturer}
                                 />
                             );
                         }

@@ -4,7 +4,8 @@ import Options from '../components/Options';
 const HTAngle = ({ bikes, bks, curMod }) => {
     const arr = [];
     let classname = '';
-
+    let noMatch = '';
+    let units = '°';
     bikes.forEach(bike => {
         bike.htAngle.forEach(angle => {
             if ((curMod === '' || bike.model === curMod) && !arr.includes(Math.floor(angle)))
@@ -31,11 +32,13 @@ const HTAngle = ({ bikes, bks, curMod }) => {
 
             if (foundMatch === true) {
                     classname = '';
+                    noMatch = ''
             } else {
                 classname = 'crossOut';
+                noMatch = '(No Match)'
             }
 
-            return <Options classname={classname} option={hT} units='°' />
+            return <Options classname={classname} value={hT} option={hT + units + noMatch} />
         })
     )
 }

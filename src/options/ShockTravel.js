@@ -4,6 +4,8 @@ import Options from '../components/Options';
 const ShockTravel = ({ bikes, bks, curMod }) => {
     const arr = [];
     let classname = '';
+    let noMatch = '';
+    let units = 'mm';
     bikes.forEach(bike => {
         if ((bike.model === curMod || curMod === '') && !arr.includes(bike.shockTravel)) {
             arr.push(bike.shockTravel);
@@ -33,13 +35,15 @@ const ShockTravel = ({ bikes, bks, curMod }) => {
             for (let i = 0; i < bks.length; i ++) {
                 if (sT === bks[i].shockTravel) {
                     classname = '';
+                    noMatch = '';
                     break;
                 }
                 else {
                     classname = 'crossOut';
+                    noMatch = '(No Match)'
                 }
             }
-            return <Options classname={classname} option={sT} units='mm' />
+            return <Options classname={classname} value={sT} option={sT + units + noMatch} units='mm' />
         })
     )
 }

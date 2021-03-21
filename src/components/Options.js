@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Options = ({ option, units, classname }) => {
+const Options = ({ option, classname, value }) => {
     return (
-        <option className={classname} value={option}>{option}{units}</option>
+        <option className={classname} value={value}>{option}</option>
     );
 }
 

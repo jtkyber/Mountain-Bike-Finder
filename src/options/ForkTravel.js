@@ -4,6 +4,8 @@ import Options from '../components/Options';
 const ForkTravel = ({ bikes, bks, curMod }) => {
     const arr = [];
     let classname = '';
+    let noMatch = '';
+    let units = 'mm';
     bikes.forEach(bike => {
         if ((bike.model === curMod || curMod === '') && !arr.includes(bike.forkTravel)) {
             arr.push(bike.forkTravel);
@@ -30,16 +32,18 @@ const ForkTravel = ({ bikes, bks, curMod }) => {
 
     return (
         sortArr(arr).map(fT => {
-            for (let i = 0; i < bks.length; i ++) {
+            for (let i = 0; i < bks.length; i++) {
                 if (fT === bks[i].forkTravel) {
                     classname = '';
+                    noMatch = '';
                     break;
                 }
                 else {
                     classname = 'crossOut';
+                    noMatch = '(No Match)'
                 }
             }
-            return <Options classname={classname} option={fT} units='mm' />
+            return <Options classname={classname} value={fT} option={fT + units + noMatch} />
         })
     )
 }
