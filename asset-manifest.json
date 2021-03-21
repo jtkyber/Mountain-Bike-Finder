@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Mountain-Bike-Finder/static/css/main.e5920d57.chunk.css",
-    "main.js": "/Mountain-Bike-Finder/static/js/main.96f10fba.chunk.js",
-    "main.js.map": "/Mountain-Bike-Finder/static/js/main.96f10fba.chunk.js.map",
+    "main.css": "/Mountain-Bike-Finder/static/css/main.d4b212c9.chunk.css",
+    "main.js": "/Mountain-Bike-Finder/static/js/main.4871cc66.chunk.js",
+    "main.js.map": "/Mountain-Bike-Finder/static/js/main.4871cc66.chunk.js.map",
     "runtime-main.js": "/Mountain-Bike-Finder/static/js/runtime-main.4b308eab.js",
     "runtime-main.js.map": "/Mountain-Bike-Finder/static/js/runtime-main.4b308eab.js.map",
     "static/css/2.fe359a49.chunk.css": "/Mountain-Bike-Finder/static/css/2.fe359a49.chunk.css",
-    "static/js/2.94f44178.chunk.js": "/Mountain-Bike-Finder/static/js/2.94f44178.chunk.js",
-    "static/js/2.94f44178.chunk.js.map": "/Mountain-Bike-Finder/static/js/2.94f44178.chunk.js.map",
+    "static/js/2.2fc6b365.chunk.js": "/Mountain-Bike-Finder/static/js/2.2fc6b365.chunk.js",
+    "static/js/2.2fc6b365.chunk.js.map": "/Mountain-Bike-Finder/static/js/2.2fc6b365.chunk.js.map",
     "static/js/3.d554b008.chunk.js": "/Mountain-Bike-Finder/static/js/3.d554b008.chunk.js",
     "static/js/3.d554b008.chunk.js.map": "/Mountain-Bike-Finder/static/js/3.d554b008.chunk.js.map",
     "index.html": "/Mountain-Bike-Finder/index.html",
     "static/css/2.fe359a49.chunk.css.map": "/Mountain-Bike-Finder/static/css/2.fe359a49.chunk.css.map",
-    "static/css/main.e5920d57.chunk.css.map": "/Mountain-Bike-Finder/static/css/main.e5920d57.chunk.css.map",
-    "static/js/2.94f44178.chunk.js.LICENSE.txt": "/Mountain-Bike-Finder/static/js/2.94f44178.chunk.js.LICENSE.txt",
+    "static/css/main.d4b212c9.chunk.css.map": "/Mountain-Bike-Finder/static/css/main.d4b212c9.chunk.css.map",
+    "static/js/2.2fc6b365.chunk.js.LICENSE.txt": "/Mountain-Bike-Finder/static/js/2.2fc6b365.chunk.js.LICENSE.txt",
     "static/media/App.css": "/Mountain-Bike-Finder/static/media/mtb2.4b41c98b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4b308eab.js",
     "static/css/2.fe359a49.chunk.css",
-    "static/js/2.94f44178.chunk.js",
-    "static/css/main.e5920d57.chunk.css",
-    "static/js/main.96f10fba.chunk.js"
+    "static/js/2.2fc6b365.chunk.js",
+    "static/css/main.d4b212c9.chunk.css",
+    "static/js/main.4871cc66.chunk.js"
   ]
 }
