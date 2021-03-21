@@ -32,15 +32,20 @@ const ShockTravel = ({ bikes, bks, curMod }) => {
 
     return (
         sortArr(arr).map(sT => {
-            for (let i = 0; i < bks.length; i ++) {
-                if (sT === bks[i].shockTravel) {
-                    classname = '';
-                    noMatch = '';
-                    break;
-                }
-                else {
-                    classname = 'crossOut';
-                    noMatch = '(No Match)'
+             if (bks.length === 0) {
+                classname = 'crossOut';
+                noMatch = '(No Match)'
+            } else {
+                for (let i = 0; i < bks.length; i ++) {
+                    if (sT === bks[i].shockTravel) {
+                        classname = '';
+                        noMatch = '';
+                        break;
+                    }
+                    else {
+                        classname = 'crossOut';
+                        noMatch = '(No Match)'
+                    }
                 }
             }
             return <Options classname={classname} value={sT} option={sT + units + noMatch} units='mm' />

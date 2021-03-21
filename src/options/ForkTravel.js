@@ -32,15 +32,20 @@ const ForkTravel = ({ bikes, bks, curMod }) => {
 
     return (
         sortArr(arr).map(fT => {
-            for (let i = 0; i < bks.length; i++) {
-                if (fT === bks[i].forkTravel) {
-                    classname = '';
-                    noMatch = '';
-                    break;
-                }
-                else {
-                    classname = 'crossOut';
-                    noMatch = '(No Match)'
+             if (bks.length === 0) {
+                classname = 'crossOut';
+                noMatch = '(No Match)'
+            } else {
+                for (let i = 0; i < bks.length; i++) {
+                    if (fT === bks[i].forkTravel) {
+                        classname = '';
+                        noMatch = '';
+                        break;
+                    }
+                    else {
+                        classname = 'crossOut';
+                        noMatch = '(No Match)'
+                    }
                 }
             }
             return <Options classname={classname} value={fT} option={fT + units + noMatch} />

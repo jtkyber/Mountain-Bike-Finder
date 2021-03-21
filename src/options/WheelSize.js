@@ -14,15 +14,20 @@ const WheelSize = ({ bikes, bks, curMod }) => {
 
     return (
         arr.sort().map(wS => {
-            for (let i = 0; i < bks.length; i ++) {
-                if (wS === bks[i].wheelSize) {
-                    classname = '';
-                    noMatch = '';
-                    break;
-                }
-                else {
-                    classname = 'crossOut';
-                    noMatch = '(No Match)';
+             if (bks.length === 0) {
+                classname = 'crossOut';
+                noMatch = '(No Match)'
+            } else {
+                for (let i = 0; i < bks.length; i ++) {
+                    if (wS === bks[i].wheelSize) {
+                        classname = '';
+                        noMatch = '';
+                        break;
+                    }
+                    else {
+                        classname = 'crossOut';
+                        noMatch = '(No Match)';
+                    }
                 }
             }
 

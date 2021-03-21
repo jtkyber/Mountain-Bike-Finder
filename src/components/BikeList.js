@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Bike from './Bike';
 
 const BikeList = ({ bikes }) => {
     if (bikes.length === 0)
     {
         return (
-        <div id='empty'>
-            <h3>no bikes match the current selections</h3>
-            <img alt="tumbleweed" src="https://media.giphy.com/media/d8lUKXD00IXSw/giphy.gif" />
-        </div>
+            <Fragment>
+                <div id='empty'>
+                    <h3>no bikes match the current selections</h3>
+                    <img alt="tumbleweed" src="https://media.giphy.com/media/d8lUKXD00IXSw/giphy.gif" />
+                </div>
+        </Fragment>
         )
     }
     return (

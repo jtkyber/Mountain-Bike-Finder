@@ -17,25 +17,30 @@ const HTAngle = ({ bikes, bks, curMod }) => {
 
     return (
         arr.sort().map(hT => {
-            let foundMatch = false;
-            hT = hT + '-' + (hT + 0.9);
-            loop1:
-            for (let bk of bks) {
-                for (let angle of bk.htAngle) {
-                    const curHtOption = parseInt(hT.substring(0, 2));
-                    if ((angle >= curHtOption) && (angle < (curHtOption + 1))) {
-                        foundMatch = true;
-                        break loop1;
-                    }
-                }
-            }
-
-            if (foundMatch === true) {
-                    classname = '';
-                    noMatch = ''
-            } else {
+             if (bks.length === 0) {
                 classname = 'crossOut';
                 noMatch = '(No Match)'
+            } else {
+                let foundMatch = false;
+                hT = hT + '-' + (hT + 0.9);
+                loop1:
+                for (let bk of bks) {
+                    for (let angle of bk.htAngle) {
+                        const curHtOption = parseInt(hT.substring(0, 2));
+                        if ((angle >= curHtOption) && (angle < (curHtOption + 1))) {
+                            foundMatch = true;
+                            break loop1;
+                        }
+                    }
+                }
+
+                if (foundMatch === true) {
+                        classname = '';
+                        noMatch = ''
+                } else {
+                    classname = 'crossOut';
+                    noMatch = '(No Match)'
+                }
             }
 
             return <Options classname={classname} value={hT} option={hT + units + noMatch} />

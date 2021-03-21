@@ -13,15 +13,20 @@ const BikeType = ({ bikes, bks, curMod }) => {
 
     return (
         arr.map(bT => {
-            for (let i = 0; i < bks.length; i ++) {
-                if (bT === bks[i].bikeType) {
-                    classname = '';
-                    noMatch = '';
-                    break;
-                }
-                else {
-                    classname = 'crossOut';
-                    noMatch = '(No Match)'
+            if (bks.length === 0) {
+                classname = 'crossOut';
+                noMatch = '(No Match)'
+            } else {
+                for (let i = 0; i < bks.length; i ++) {
+                    if (bT === bks[i].bikeType) {
+                        classname = '';
+                        noMatch = '';
+                        break;
+                    }
+                    else {
+                        classname = 'crossOut';
+                        noMatch = '(No Match)'
+                    }
                 }
             }
 
